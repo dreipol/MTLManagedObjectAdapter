@@ -18,6 +18,12 @@
 		5470B5D71985208C00E4D941 /* MTLCoreDataTestModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470B5D41985208C00E4D941 /* MTLCoreDataTestModels.m */; };
 		5470B5DB1985209E00E4D941 /* TestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5470B5D91985209E00E4D941 /* TestModel.xcdatamodeld */; };
 		5470B5DF198520CB00E4D941 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5470B50E1985122200E4D941 /* CoreData.framework */; };
+		66C83A1121B83199009256D0 /* ZERCDTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C83A0F21B83199009256D0 /* ZERCDTransformer.h */; };
+		66C83A1221B83199009256D0 /* ZERCDTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C83A0F21B83199009256D0 /* ZERCDTransformer.h */; };
+		66C83A1321B83199009256D0 /* ZERCDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C83A1021B83199009256D0 /* ZERCDTransformer.m */; };
+		66C83A1421B83199009256D0 /* ZERCDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C83A1021B83199009256D0 /* ZERCDTransformer.m */; };
+		66C83A1521B83199009256D0 /* ZERCDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C83A1021B83199009256D0 /* ZERCDTransformer.m */; };
+		66C83A1621B83199009256D0 /* ZERCDTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C83A1021B83199009256D0 /* ZERCDTransformer.m */; };
 		D0EB703F1AB744E400BBB455 /* MTLManagedObjectAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EB70341AB744E400BBB455 /* MTLManagedObjectAdapter.framework */; };
 		D0EB70521AB7479700BBB455 /* MTLManagedObjectAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5470B5171985122200E4D941 /* MTLManagedObjectAdapter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0EB70531AB7479700BBB455 /* MTLManagedObjectAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5470B5181985122200E4D941 /* MTLManagedObjectAdapter.m */; };
@@ -95,6 +101,8 @@
 		5470B5D31985208C00E4D941 /* MTLCoreDataTestModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLCoreDataTestModels.h; sourceTree = "<group>"; };
 		5470B5D41985208C00E4D941 /* MTLCoreDataTestModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLCoreDataTestModels.m; sourceTree = "<group>"; };
 		5470B5DA1985209E00E4D941 /* TestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestModel.xcdatamodel; sourceTree = "<group>"; };
+		66C83A0F21B83199009256D0 /* ZERCDTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZERCDTransformer.h; sourceTree = "<group>"; };
+		66C83A1021B83199009256D0 /* ZERCDTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZERCDTransformer.m; sourceTree = "<group>"; };
 		D0EB70341AB744E400BBB455 /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MTLManagedObjectAdapter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EB703E1AB744E400BBB455 /* MTLManagedObjectAdapter-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MTLManagedObjectAdapter-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EB70511AB7450800BBB455 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +210,8 @@
 		5470B5101985122200E4D941 /* MTLManagedObjectAdapter */ = {
 			isa = PBXGroup;
 			children = (
+				66C83A0F21B83199009256D0 /* ZERCDTransformer.h */,
+				66C83A1021B83199009256D0 /* ZERCDTransformer.m */,
 				5470B5171985122200E4D941 /* MTLManagedObjectAdapter.h */,
 				5470B5181985122200E4D941 /* MTLManagedObjectAdapter.m */,
 				5470B5111985122200E4D941 /* Supporting Files */,
@@ -336,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5470B583198512AE00E4D941 /* MTLManagedObjectAdapter.h in Headers */,
+				66C83A1121B83199009256D0 /* ZERCDTransformer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EB70521AB7479700BBB455 /* MTLManagedObjectAdapter.h in Headers */,
+				66C83A1221B83199009256D0 /* ZERCDTransformer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C83A1321B83199009256D0 /* ZERCDTransformer.m in Sources */,
 				5470B5CC19851F3900E4D941 /* EXTScope.m in Sources */,
 				5470B5C819851F3900E4D941 /* EXTRuntimeExtensions.m in Sources */,
 				5470B5191985122200E4D941 /* MTLManagedObjectAdapter.m in Sources */,
@@ -508,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C83A1421B83199009256D0 /* ZERCDTransformer.m in Sources */,
 				5470B52C1985122300E4D941 /* MTLManagedObjectAdapterSpec.m in Sources */,
 				D0EB706C1AB74C4100BBB455 /* SwiftJunk.swift in Sources */,
 				5470B5D71985208C00E4D941 /* MTLCoreDataTestModels.m in Sources */,
@@ -520,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C83A1521B83199009256D0 /* ZERCDTransformer.m in Sources */,
 				D0EB70611AB748E700BBB455 /* EXTScope.m in Sources */,
 				D0EB70601AB748E700BBB455 /* EXTRuntimeExtensions.m in Sources */,
 				D0EB70531AB7479700BBB455 /* MTLManagedObjectAdapter.m in Sources */,
@@ -530,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C83A1621B83199009256D0 /* ZERCDTransformer.m in Sources */,
 				D0EB70561AB747B100BBB455 /* TestModel.xcdatamodeld in Sources */,
 				D0EB706E1AB74D5E00BBB455 /* MTLManagedObjectAdapterSpec.m in Sources */,
 				D0EB70551AB747AC00BBB455 /* MTLCoreDataTestModels.m in Sources */,

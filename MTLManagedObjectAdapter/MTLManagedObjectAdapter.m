@@ -13,6 +13,8 @@
 #import "EXTScope.h"
 #import "EXTRuntimeExtensions.h"
 
+#import "ZERCDTransformer.h"
+
 #import "MTLManagedObjectAdapter.h"
 
 NSString * const MTLManagedObjectAdapterErrorDomain = @"MTLManagedObjectAdapterErrorDomain";
@@ -542,6 +544,12 @@ static SEL MTLSelectorWithKeyPattern(NSString *key, const char *suffix) {
 			// Jump through some hoops to avoid referencing classes directly.
 			NSString *propertyClassName = NSStringFromClass(propertyDescription.class);
 			if ([propertyClassName isEqual:@"NSAttributeDescription"]) {
+				return serializeAttribute((id)propertyDescription);
+			} else if(self.valueTransformersByPropertyKey[propertyKey]) {
+				NSValueTransformer *transformer = self.valueTransformersByPropertyKey[propertyKey];
+				if ([transformer isKindOfClass:ZERCDTransformer.class]) {
+					((ZERCDTransformer *)transformer).context = context;
+				}
 				return serializeAttribute((id)propertyDescription);
 			} else if ([propertyClassName isEqual:@"NSRelationshipDescription"]) {
 				return serializeRelationship((id)propertyDescription);
