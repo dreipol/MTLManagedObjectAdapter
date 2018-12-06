@@ -7,7 +7,7 @@
 //
 
 #import "MTLContextValueTransformer.h"
-@interface ZERReversibleValueTransformer : MTLContextValueTransformer
+@interface MTLReversibleContextValueTransformer : MTLContextValueTransformer
 @end
 @interface MTLContextValueTransformer()
 @property (nonatomic, copy, readonly) MTLContextValueTransformerBlock forwardBlock;
@@ -28,7 +28,7 @@
 }
 
 + (instancetype)transformerUsingForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock {
-    return [[MTLContextValueTransformer alloc] initWithForwardBlock:forwardBlock reverseBlock:reverseBlock];
+    return [[MTLReversibleContextValueTransformer alloc] initWithForwardBlock:forwardBlock reverseBlock:reverseBlock];
 }
 
 - (id)initWithForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock {
@@ -74,7 +74,7 @@
 
 @end
 
-@implementation ZERReversibleValueTransformer
+@implementation MTLReversibleContextValueTransformer
 
 #pragma mark Lifecycle
 
