@@ -263,10 +263,10 @@ static SEL MTLSelectorWithKeyPattern(NSString *key, const char *suffix) {
 			if ([propertyClassName isEqual:@"NSAttributeDescription"]) {
 				return deserializeAttribute((id)propertyDescription);
 			} else if(self.valueTransformersByPropertyKey[propertyKey]) {
-            NSValueTransformer *transformer = self.valueTransformersByPropertyKey[propertyKey];
-            if ([transformer isKindOfClass:MTLContextValueTransformer.class]) {
-                ((MTLContextValueTransformer *)transformer).context = context;
-            }
+            	NSValueTransformer *transformer = self.valueTransformersByPropertyKey[propertyKey];
+            	if ([transformer isKindOfClass:MTLContextValueTransformer.class]) {
+                	((MTLContextValueTransformer *)transformer).context = context;
+            	}
                 return deserializeAttribute((id)propertyDescription);
             } else if ([propertyClassName isEqual:@"NSRelationshipDescription"]) {
 				return deserializeRelationship((id)propertyDescription);
