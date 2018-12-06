@@ -13,7 +13,7 @@
 #import "EXTScope.h"
 #import "EXTRuntimeExtensions.h"
 
-#import "ZERCDTransformer.h"
+#import "MTLContextValueTransformer.h"
 
 #import "MTLManagedObjectAdapter.h"
 
@@ -547,8 +547,8 @@ static SEL MTLSelectorWithKeyPattern(NSString *key, const char *suffix) {
 				return serializeAttribute((id)propertyDescription);
 			} else if(self.valueTransformersByPropertyKey[propertyKey]) {
 				NSValueTransformer *transformer = self.valueTransformersByPropertyKey[propertyKey];
-				if ([transformer isKindOfClass:ZERCDTransformer.class]) {
-					((ZERCDTransformer *)transformer).context = context;
+				if ([transformer isKindOfClass:MTLContextValueTransformer.class]) {
+					((MTLContextValueTransformer *)transformer).context = context;
 				}
 				return serializeAttribute((id)propertyDescription);
 			} else if ([propertyClassName isEqual:@"NSRelationshipDescription"]) {

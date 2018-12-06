@@ -1,37 +1,37 @@
 //
-//  ZERCDTransformer.m
+//  MTLContextValueTransformer.m
 //  Skiguide Zermatt
 //
 //  Created by Samuel Bichsel on 05.12.18.
 //  Copyright © 2018 dreipol gmbh. All rights reserved.
 //
 
-#import "ZERCDTransformer.h"
-@interface ZERReversibleValueTransformer : ZERCDTransformer
+#import "MTLContextValueTransformer.h"
+@interface ZERReversibleValueTransformer : MTLContextValueTransformer
 @end
-@interface ZERCDTransformer()
-@property (nonatomic, copy, readonly) ZERValueTransformerBlock forwardBlock;
-@property (nonatomic, copy, readonly) ZERValueTransformerBlock reverseBlock;
+@interface MTLContextValueTransformer()
+@property (nonatomic, copy, readonly) MTLContextValueTransformerBlock forwardBlock;
+@property (nonatomic, copy, readonly) MTLContextValueTransformerBlock reverseBlock;
 
 @end
 
-@implementation ZERCDTransformer
+@implementation MTLContextValueTransformer
 
 #pragma mark Lifecycle
 
-+ (instancetype)transformerUsingForwardBlock:(ZERValueTransformerBlock)forwardBlock {
++ (instancetype)transformerUsingForwardBlock:(MTLContextValueTransformerBlock)forwardBlock {
     return [[self alloc] initWithForwardBlock:forwardBlock reverseBlock:nil];
 }
 
-+ (instancetype)transformerUsingReversibleBlock:(ZERValueTransformerBlock)reversibleBlock {
++ (instancetype)transformerUsingReversibleBlock:(MTLContextValueTransformerBlock)reversibleBlock {
     return [self transformerUsingForwardBlock:reversibleBlock reverseBlock:reversibleBlock];
 }
 
-+ (instancetype)transformerUsingForwardBlock:(ZERValueTransformerBlock)forwardBlock reverseBlock:(ZERValueTransformerBlock)reverseBlock {
-    return [[ZERCDTransformer alloc] initWithForwardBlock:forwardBlock reverseBlock:reverseBlock];
++ (instancetype)transformerUsingForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock {
+    return [[MTLContextValueTransformer alloc] initWithForwardBlock:forwardBlock reverseBlock:reverseBlock];
 }
 
-- (id)initWithForwardBlock:(ZERValueTransformerBlock)forwardBlock reverseBlock:(ZERValueTransformerBlock)reverseBlock {
+- (id)initWithForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock {
     NSParameterAssert(forwardBlock != nil);
 
     self = [super init];
@@ -78,7 +78,7 @@
 
 #pragma mark Lifecycle
 
-- (id)initWithForwardBlock:(ZERValueTransformerBlock)forwardBlock reverseBlock:(ZERValueTransformerBlock)reverseBlock {
+- (id)initWithForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock {
     NSParameterAssert(reverseBlock != nil);
     return [super initWithForwardBlock:forwardBlock reverseBlock:reverseBlock];
 }
