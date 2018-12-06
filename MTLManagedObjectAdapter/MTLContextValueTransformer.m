@@ -8,7 +8,10 @@
 
 #import "MTLContextValueTransformer.h"
 @interface MTLReversibleContextValueTransformer : MTLContextValueTransformer
+- (id)initWithForwardBlock:(MTLContextValueTransformerBlock)forwardBlock reverseBlock:(MTLContextValueTransformerBlock)reverseBlock;
+
 @end
+
 @interface MTLContextValueTransformer()
 @property (nonatomic, copy, readonly) MTLContextValueTransformerBlock forwardBlock;
 @property (nonatomic, copy, readonly) MTLContextValueTransformerBlock reverseBlock;
